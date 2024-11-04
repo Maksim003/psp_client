@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" style="-fx-background-color: #2E3348;" stylesheets="@com/example/psp_client/buttons.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.psp_client.Controller.MenuUserController">
+    <children>
+        <AnchorPane fx:id="pane2" layoutX="-2.0" layoutY="79.0" prefHeight="226.0" prefWidth="503.0" style="-fx-background-color: #F0FFFF;">
+            <children>
+                <Button id="redline" fx:id="studentsButton" layoutX="60.0" layoutY="49.0" mnemonicParsing="false" onAction="#students" prefHeight="26.0" prefWidth="142.0" text="Студенты" />
+                <Button id="redline" fx:id="changePass" layoutX="297.0" layoutY="49.0" mnemonicParsing="false" onAction="#changePass" prefHeight="26.0" prefWidth="142.0" text="Изменить пароль" />
+                <Button id="redline" fx:id="exit" layoutX="180.0" layoutY="139.0" mnemonicParsing="false" onAction="#exit" prefHeight="26.0" prefWidth="142.0" text="Выход" />
+            </children>
+        </AnchorPane>
+        <Label fx:id="menu" layoutX="152.0" layoutY="32.0" prefHeight="32.0" prefWidth="211.0" text="Меню пользователя" textFill="#fcf9f9">
+            <font>
+                <Font size="22.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>

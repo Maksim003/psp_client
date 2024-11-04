@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="750.0" style="-fx-background-color: #2E3348;" stylesheets="@com/example/psp_client/buttons.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.psp_client.Controller.StudentsController">
+    <children>
+        <AnchorPane fx:id="pane2" layoutY="77.0" prefHeight="422.0" prefWidth="700.0" style="-fx-background-color: #F0FFFF;">
+            <children>
+                <TabPane fx:id="studentsPane" prefHeight="422.0" prefWidth="750.0" side="BOTTOM" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                        <Tab fx:id="studentsTab" text="Студенты">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="394.0" prefWidth="746.0">
+                                    <children>
+                                        <TableView fx:id="studentsTable" layoutX="1.0" layoutY="28.0" prefHeight="269.0" prefWidth="750.0">
+                                            <columns>
+                                                <TableColumn fx:id="idStudents" prefWidth="102.39996027946472" text="ID" />
+                                                <TableColumn fx:id="surnameStudents" prefWidth="166.40003967285156" text="Фамилия" />
+                                                <TableColumn fx:id="nameStudents" minWidth="0.0" prefWidth="146.39996337890625" text="Имя" />
+                                                <TableColumn fx:id="patronymicStudents" minWidth="5.60009765625" prefWidth="171.20001220703125" text="Отчество" />
+                                                <TableColumn fx:id="dateStudents" prefWidth="161.60001220703123" text="Дата рождения" />
+                                            </columns>
+                                        </TableView>
+                                        <Button id="redline" fx:id="deleteStudent" layoutX="26.0" layoutY="342.0" mnemonicParsing="false" onAction="#deleteStudentsButton" prefHeight="32.0" prefWidth="134.0" text="Удалить студента" />
+                                        <Button id="redline" fx:id="changeBasicS" layoutX="514.0" layoutY="342.0" mnemonicParsing="false" onAction="#changeBasicS" prefHeight="32.0" prefWidth="221.0" text="Изменить базовую стипендию" />
+                                        <Label fx:id="error" layoutX="223.0" layoutY="309.0" prefHeight="18.0" prefWidth="234.0" text="Label" textFill="RED" visible="false" />
+                                        <TextField fx:id="search" layoutX="1.0" layoutY="1.0" prefHeight="26.0" prefWidth="750.0" promptText="Поиск" />
+                              <Button id="redline" fx:id="check" layoutX="175.0" layoutY="342.0" mnemonicParsing="false" onAction="#checkStudentsButton" prefHeight="32.0" prefWidth="134.0" text="Оценки" />
+                              <Button id="redline" fx:id="checkScholarship" layoutX="322.0" layoutY="342.0" mnemonicParsing="false" onAction="#checkScholarshipButton" prefHeight="32.0" prefWidth="134.0" text="Стипендия" />
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab fx:id="addStudentsTab" text="Добавить студента">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <TextField fx:id="surname" focusTraversable="false" layoutX="32.0" layoutY="40.0" prefHeight="26.0" prefWidth="189.0" promptText="Фамилия" />
+                                        <DatePicker fx:id="date" editable="false" focusTraversable="false" layoutX="33.0" layoutY="114.0" prefHeight="22.0" prefWidth="186.0" promptText="Дата рождения" />
+                                        <ComboBox fx:id="coursework" layoutX="253.0" layoutY="113.0" prefHeight="26.0" prefWidth="191.0" promptText="Эргатические системы (кр)" />
+                                        <Button id="redline" fx:id="addStudent" layoutX="290.0" layoutY="242.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="118.0" text="Добавить" />
+                                        <Label fx:id="error1" layoutX="209.0" layoutY="217.0" prefHeight="18.0" prefWidth="300.0" text="Label" textAlignment="CENTER" textFill="RED" visible="false" />
+                              <TextField fx:id="patronymic" focusTraversable="false" layoutX="485.0" layoutY="40.0" prefHeight="26.0" prefWidth="189.0" promptText="Отчество" />
+                              <TextField fx:id="name" focusTraversable="false" layoutX="254.0" layoutY="40.0" prefHeight="26.0" prefWidth="189.0" promptText="Имя" />
+                              <ComboBox fx:id="programming" layoutX="30.0" layoutY="175.0" prefHeight="26.0" prefWidth="191.0" promptText="Современные ЯП" />
+                              <ComboBox fx:id="networks" layoutX="484.0" layoutY="113.0" prefHeight="26.0" prefWidth="191.0" promptText="Компьютерные сети" />
+                              <ComboBox fx:id="economy" layoutX="253.0" layoutY="175.0" prefHeight="26.0" prefWidth="191.0" promptText="Экономика" />
+                              <ComboBox fx:id="ergaticSystem" layoutX="484.0" layoutY="175.0" prefHeight="26.0" prefWidth="191.0" promptText="Эргатические системы" />
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab fx:id="changeDataStudentsTab" text="Изменить данные студента">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <TableView fx:id="studentsTable1" prefHeight="192.0" prefWidth="750.0">
+                                 <columns>
+                                    <TableColumn fx:id="idStudents1" prefWidth="102.39996027946472" text="ID" />
+                                    <TableColumn fx:id="surnameStudents1" prefWidth="166.40003967285156" text="Фамилия" />
+                                    <TableColumn fx:id="nameStudents1" prefWidth="146.39996337890625" text="Имя" />
+                                    <TableColumn fx:id="patronymicStudents1" prefWidth="171.20001220703125" text="Отчество" />
+                                    <TableColumn fx:id="dateStudents1" prefWidth="160.0001220703125" text="Дата рождения" />
+                                 </columns>
+                                        </TableView>
+                                        <TextField fx:id="surname1" layoutX="34.0" layoutY="199.0" prefHeight="26.0" prefWidth="189.0" promptText="Фамилия" visible="false" />
+                                        <DatePicker fx:id="date1" editable="false" layoutX="35.0" layoutY="241.0" prefHeight="19.0" prefWidth="187.0" promptText="Дата рождения" visible="false" />
+                                        <ComboBox fx:id="coursework1" layoutX="266.0" layoutY="251.0" prefHeight="24.0" prefWidth="192.0" promptText="Эргатические системы (кр)" visible="false" />
+                                        <Button id="redline" fx:id="changeStudent" layoutX="297.0" layoutY="354.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="118.0" text="Изменить" visible="false" />
+                              <Label fx:id="error2" layoutX="221.0" layoutY="334.0" prefHeight="16.0" prefWidth="308.0" text="Label" textAlignment="CENTER" textFill="RED" visible="false" />
+                              <TextField fx:id="patronymic1" layoutX="494.0" layoutY="199.0" prefHeight="26.0" prefWidth="189.0" promptText="Отчество" visible="false" />
+                              <TextField fx:id="name1" layoutX="267.0" layoutY="199.0" prefHeight="26.0" prefWidth="189.0" promptText="Имя" visible="false" />
+                              <ComboBox fx:id="networks1" layoutX="493.0" layoutY="251.0" prefHeight="22.0" prefWidth="192.0" promptText="Компьютерные сети" visible="false" />
+                              <ComboBox fx:id="programming1" layoutX="33.0" layoutY="299.0" prefHeight="25.0" prefWidth="192.0" promptText="Современные ЯП" visible="false" />
+                              <ComboBox fx:id="economy1" layoutX="266.0" layoutY="299.0" prefHeight="22.0" prefWidth="192.0" promptText="Экономика" visible="false" />
+                              <ComboBox fx:id="ergaticSystem1" layoutX="493.0" layoutY="299.0" prefHeight="23.0" prefWidth="192.0" promptText="Эргатические системы" visible="false" />
+                              <Label fx:id="labelP" layoutX="73.0" layoutY="285.0" prefHeight="18.0" prefWidth="110.0" text="Современные ЯП" textAlignment="CENTER" visible="false" />
+                              <Label fx:id="labelC" layoutX="286.0" layoutY="232.0" prefHeight="19.0" prefWidth="152.0" text="Эргатические системы (кр)" textAlignment="CENTER" visible="false" />
+                              <Label fx:id="labelN" layoutX="533.0" layoutY="232.0" prefHeight="19.0" prefWidth="118.0" text="Компьютерные сети" textAlignment="CENTER" visible="false" />
+                              <Label fx:id="labelE" layoutX="323.0" layoutY="286.0" prefHeight="15.0" prefWidth="66.0" text="Экономика" textAlignment="CENTER" visible="false" />
+                              <Label fx:id="labelErg" layoutX="533.0" layoutY="286.0" prefHeight="16.0" prefWidth="131.0" text="Эргатические системы" textAlignment="CENTER" visible="false" />
+                                    </children></AnchorPane>
+                            </content>
+                        </Tab>
+                    </tabs>
+                </TabPane>
+            </children>
+        </AnchorPane>
+        <Label fx:id="studentsLabel" layoutX="291.0" layoutY="25.0" prefHeight="32.0" prefWidth="118.0" text="Студенты" textFill="#fcf9f9">
+            <font>
+                <Font size="22.0" />
+            </font>
+        </Label>
+        <Button id="redline" fx:id="exit" layoutX="639.0" layoutY="45.0" mnemonicParsing="false" onAction="#exit" prefHeight="26.0" prefWidth="110.0" text="Выход" />
+    </children>
+</AnchorPane>

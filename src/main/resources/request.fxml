@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" style="-fx-background-color: #2E3348;" stylesheets="@com/example/psp_client/buttons.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.psp_client.Controller.RequestController">
+    <children>
+        <AnchorPane fx:id="pane2" layoutX="-2.0" layoutY="79.0" prefHeight="226.0" prefWidth="503.0" style="-fx-background-color: #F0FFFF;">
+            <children>
+                <TableView fx:id="accountsTable" prefHeight="154.0" prefWidth="503.0">
+                    <columns>
+                        <TableColumn fx:id="idAccounts" prefWidth="115.20001220703125" text="ID" />
+                        <TableColumn fx:id="logAccounts" minWidth="0.0" prefWidth="216.0" text="Логин" />
+                        <TableColumn fx:id="roleAccounts" minWidth="2.4000244140625" prefWidth="172.0" text="Роль" />
+                    </columns>
+                </TableView>
+                <Button id="redline" fx:id="exit" layoutX="369.0" layoutY="185.0" mnemonicParsing="false" onAction="#exit" prefHeight="26.0" prefWidth="89.0" text="Выход" />
+            <Button id="redline" fx:id="changeAccess" layoutX="14.0" layoutY="185.0" mnemonicParsing="false" onAction="#changeAccessButton" prefHeight="32.0" prefWidth="129.0" text="Подтверждение" />
+            <Label fx:id="error" layoutX="165.0" layoutY="162.0" prefHeight="18.0" prefWidth="170.0" text="Label" textFill="RED" visible="false" />
+            <Button id="redline" fx:id="delRequest" layoutX="153.0" layoutY="185.0" mnemonicParsing="false" onAction="#deleteRequestButton" prefHeight="26.0" prefWidth="98.0" text="Удаление" />
+            </children>
+        </AnchorPane>
+        <Label fx:id="text" layoutX="211.0" layoutY="24.0" prefHeight="32.0" prefWidth="98.0" text="Заявки" textFill="#fcf9f9">
+            <font>
+                <Font size="22.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>

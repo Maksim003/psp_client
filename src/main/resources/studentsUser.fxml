@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="750.0" style="-fx-background-color: #2E3348;" stylesheets="@com/example/psp_client/buttons.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.psp_client.Controller.StudentsUserController">
+    <children>
+        <AnchorPane fx:id="pane2" layoutY="77.0" prefHeight="422.0" prefWidth="700.0" style="-fx-background-color: #F0FFFF;">
+         <children>
+              <Button id="redline" fx:id="exit" layoutX="572.0" layoutY="364.0" mnemonicParsing="false" onAction="#exit" prefHeight="26.0" prefWidth="110.0" text="Выход" />
+            <TextField fx:id="search" layoutX="1.0" layoutY="1.0" prefHeight="26.0" prefWidth="750.0" promptText="Поиск" />
+            <TableView fx:id="studentsTable" layoutY="28.0" prefHeight="242.0" prefWidth="750.0">
+               <columns>
+                  <TableColumn fx:id="idStudents" prefWidth="102.39996027946472" text="ID" />
+                  <TableColumn fx:id="surnameStudents" prefWidth="166.40003967285156" text="Фамилия" />
+                  <TableColumn fx:id="nameStudents" minWidth="0.0" prefWidth="146.39996337890625" text="Имя" />
+                  <TableColumn fx:id="patronymicStudents" minWidth="5.60009765625" prefWidth="171.20001220703125" text="Отчество" />
+                  <TableColumn fx:id="dateStudents" prefWidth="161.60001220703123" text="Дата рождения" />
+               </columns>
+            </TableView>
+            <Button id="redline" fx:id="checkMarksButton" layoutX="38.0" layoutY="364.0" mnemonicParsing="false" onAction="#checkMarks" prefHeight="26.0" prefWidth="110.0" text="Оценки" />
+            <Button id="redline" fx:id="checkScholarshipButton" layoutX="195.0" layoutY="364.0" mnemonicParsing="false" onAction="#checkScholarship" prefHeight="26.0" prefWidth="110.0" text="Стипендия" />
+            <Label fx:id="error" layoutX="294.0" layoutY="296.0" prefHeight="19.0" prefWidth="162.0" text="Label" textFill="RED" visible="false">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+         </children>
+        </AnchorPane>
+        <Label fx:id="studentsLabel" layoutX="316.0" layoutY="31.0" prefHeight="32.0" prefWidth="118.0" text="Студенты" textFill="#fcf9f9">
+            <font>
+                <Font size="22.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>

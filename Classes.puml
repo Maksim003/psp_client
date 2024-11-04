@@ -1,0 +1,239 @@
+@startuml
+class com.example.psp_client.Controller.BasicScholarshipController {
+- ResourceBundle resources
+- URL location
+- TextField basicS
+- Button change
+- Label changeBasicSLabel
+- Label error
+- Button exit
+- AnchorPane pane1
+- AnchorPane pane2
+~ Request request
+~ Client client
+~ void exit(ActionEvent)
+~ void initialize()
++ boolean isBasicS(String)
+}
+class com.example.psp_client.Controller.StudentsController {
+~ void checkStudentsButton(ActionEvent)
+~ void exit(ActionEvent)
+~ void checkScholarshipButton(ActionEvent)
+~ void changeBasicS(ActionEvent)
+~ void deleteStudentsButton(ActionEvent)
+~ void initialize()
++ void labelVisible(boolean)
++ void changeDataStudents(int)
++ void visible()
++ void searchInTable()
++ void addStudentsButton()
++ void clearFields()
++ Date getDate(DatePicker,int)
++ void updateTable(TableView<Students>)
++ void addStudentsToTable()
++ boolean isAlpha(String)
+}
+class com.example.psp_client.Model.MainModel {
++ {static} Scene scene
++ {static} String currentLogin
++ {static} String currentPassword
++ String getSecurePassword(String,String)
++ String getSalt()
+}
+
+class com.example.psp_client.Controller.StudentsUserController {
+~ void checkMarks(ActionEvent)
+~ void checkScholarship(ActionEvent)
+~ void exit(ActionEvent)
+~ void initialize()
++ void searchInTable()
++ void buildTable()
+}
+class com.example.psp_client.Controller.RegController {
+~ void initialize()
+~ void enter(ActionEvent)
+- void signUpUser()
++ boolean isAlpha(String)
+}
+class com.example.psp_client.Model.Request {
+- String request
+- Account account
+- Students students
+- Marks marks
+- double basicS
++ String getRequest()
++ void setRequest(String)
++ Account getAccount()
++ void setAccount(Account)
++ Students getStudents()
++ void setStudents(Students)
++ double getBasicS()
++ void setBasicS(double)
++ Marks getMarks()
++ void setMarks(Marks)
+}
+class com.example.psp_client.Model.Account {
+- int id
+- String login
+- String password
+- int role
+- int access
+- String salt
++ int getId()
++ void setId(int)
++ String getLogin()
++ void setLogin(String)
++ String getPassword()
++ void setPassword(String)
++ int getRole()
++ void setRole(int)
++ int getAccess()
++ void setAccess(int)
++ String getSalt()
++ void setSalt(String)
+}
+class com.example.psp_client.Controller.RequestController {
+~ void exit(ActionEvent)
+~ void deleteRequestButton(ActionEvent)
+~ void changeAccessButton(ActionEvent)
+~ void initialize()
++ void buildTable()
++ void updateTable()
+}
+class com.example.psp_client.Controller.ChangePasswordController {
+~ void exit(MouseEvent)
+~ void initialize()
+- void changePassUser(String)
++ boolean isAlpha(String)
+}
+class com.example.psp_client.Model.Answer {
+- String answer
+- ArrayList<Account> accounts
+- ArrayList<Students> students
+- Marks marks
+- double data
+- String salt
++ String getAnswer()
++ void setAnswer(String)
++ ArrayList<Account> getAccounts()
++ void setAccounts(ArrayList<Account>)
++ ArrayList<Students> getStudents()
++ void setStudents(ArrayList<Students>)
++ double getData()
++ void setData(double)
++ String getSalt()
++ void setSalt(String)
++ Marks getMarks()
++ void setMarks(Marks)
+}
+class com.example.psp_client.Controller.SceneController {
++ void changeScene(String,ActionEvent)
+}
+class com.example.psp_client.Controller.ScholarshipController {
+~ void exit(ActionEvent)
+~ void initialize()
+}
+class com.example.psp_client.Main {
++ void start(Stage)
++ {static} void main(String[])
+}
+class com.example.psp_client.Controller.MenuAdminController {
+~ void accounts(ActionEvent)
+~ void changePassword(ActionEvent)
+~ void exit(ActionEvent)
+~ void students(ActionEvent)
+~ void initialize()
+}
+class com.example.psp_client.Model.Marks {
+- String id
+- int coursework
+- int economy
+- int networks
+- int programming
+- int ergaticSystem
+- int id_student
++ String getId()
++ void setId(String)
++ int getCoursework()
++ void setCoursework(int)
++ int getEconomy()
++ void setEconomy(int)
++ int getNetworks()
++ void setNetworks(int)
++ int getProgramming()
++ void setProgramming(int)
++ int getErgaticSystem()
++ void setErgaticSystems(int)
++ int getId_student()
++ void setId_student(int)
+}
+class com.example.psp_client.Controller.AccountsController {
+~ void changeRoleButton(ActionEvent)
+~ void deleteAccountButton(ActionEvent)
+~ void exit(ActionEvent)
+~ void request(ActionEvent)
+~ void initialize()
++ void buildTable()
++ void updateTable()
+}
+class com.example.psp_client.Model.Students {
+- Integer id
+- String surname
+- String name
+- String patronymic
+- String date
++ Integer getId()
++ void setId(int)
++ String getSurname()
++ void setSurname(String)
++ String getName()
++ void setName(String)
++ String getPatronymic()
++ void setPatronymic(String)
++ String getDate()
++ void setDate(String)
+}
+class com.example.psp_client.Controller.MarksController {
+~ void exit(ActionEvent)
+~ void initialize()
+}
+class com.example.psp_client.Controller.MainController {
+~ void openRegScene(ActionEvent)
+~ void initialize()
+- void logUser(String,String,ActionEvent)
+}
+class com.example.psp_client.Model.Client {
+~ String outJson
+~ ObjectMapper objectMapper
+~ Answer answer
++ ArrayList<Account> getAccounts(Request)
++ ArrayList<Students> getStudents(Request)
++ Marks getMarks(Request)
++ Account getAcc(Request)
++ String getString(Request)
++ double getDouble(Request)
++ Answer sendToServer(Request,DataInputStream,DataOutputStream,Socket)
++ void changeData(Request)
+}
+class com.example.psp_client.Controller.MenuUserController {
+~ void changePass(ActionEvent)
+~ void exit(ActionEvent)
+~ void students(ActionEvent)
+~ void initialize()
+}
+
+
+com.example.psp_client.Controller.SceneController <|--- com.example.psp_client.Controller.BasicScholarshipController
+com.example.psp_client.Controller.SceneController <|--- com.example.psp_client.Controller.StudentsController
+com.example.psp_client.Controller.SceneController <|--- com.example.psp_client.Controller.StudentsUserController
+com.example.psp_client.Controller.SceneController <|--- com.example.psp_client.Controller.RegController
+com.example.psp_client.Controller.SceneController <|-- com.example.psp_client.Controller.RequestController
+com.example.psp_client.Controller.SceneController <|-- com.example.psp_client.Controller.ChangePasswordController
+com.example.psp_client.Controller.SceneController <|-- com.example.psp_client.Controller.ScholarshipController
+javafx.application.Application <|-- com.example.psp_client.Main
+com.example.psp_client.Controller.SceneController <|-- com.example.psp_client.Controller.MenuAdminController
+com.example.psp_client.Controller.SceneController <|-- com.example.psp_client.Controller.AccountsController
+com.example.psp_client.Controller.SceneController <|--- com.example.psp_client.Controller.MarksController
+com.example.psp_client.Controller.SceneController <|--- com.example.psp_client.Controller.MainController
+com.example.psp_client.Controller.SceneController <|--- com.example.psp_client.Controller.MenuUserController
+@enduml

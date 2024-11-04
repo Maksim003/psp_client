@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" style="-fx-background-color: #2E3348;" stylesheets="@com/example/psp_client/buttons.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.psp_client.Controller.RegController">
+    <children>
+        <AnchorPane fx:id="pane2" layoutX="-2.0" layoutY="79.0" prefHeight="226.0" prefWidth="503.0" style="-fx-background-color: #F0FFFF;">
+            <children>
+                <TextField fx:id="regLogin" focusTraversable="false" layoutX="149.0" layoutY="22.0" prefHeight="26.0" prefWidth="204.0" promptText="Логин" />
+            <PasswordField fx:id="regPassword" focusTraversable="false" layoutX="149.0" layoutY="62.0" prefHeight="26.0" prefWidth="204.0" promptText="Пароль" />
+            <Button id="redline" fx:id="regEnter" layoutX="78.0" layoutY="163.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="149.0" text="Зарегистрироваться" />
+            <Button id="redline" fx:id="authorization" layoutX="319.0" layoutY="163.0" mnemonicParsing="false" onAction="#enter" prefHeight="32.0" prefWidth="123.0" text="Авторизоваться" />
+            <Label fx:id="logInError" layoutX="149.0" layoutY="140.0" prefHeight="20.0" prefWidth="204.0" textFill="RED" visible="false" />
+            <PasswordField fx:id="regPassword1" focusTraversable="false" layoutX="149.0" layoutY="100.0" prefHeight="26.0" prefWidth="204.0" promptText="Пароль" />
+            </children>
+        </AnchorPane>
+          <Label fx:id="registration" layoutX="182.0" layoutY="32.0" prefHeight="31.0" prefWidth="136.0" text="Регистрация" textFill="#fcf9f9">
+              <font>
+                  <Font size="22.0" />
+              </font>
+          </Label>
+    </children>
+</AnchorPane>

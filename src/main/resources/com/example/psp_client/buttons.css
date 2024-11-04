@@ -1,0 +1,19 @@
+#redline{
+    -fx-text-fill: #18c79e;
+    -fx-font-family: "System";
+    -fx-font-weight: bold;
+    -fx-font-size: 13;
+    -fx-border-color: #18c79e;
+    -fx-background-color:null;
+    -fx-border-radius: 5;
+    -fx-border-width: 2;
+}
+
+#redline:hover{
+    -fx-background-color: #18c79e;
+    -fx-font-family: "System";
+    -fx-font-size: 13;
+    -fx-text-fill:white;
+    -fx-font-weight:bold;
+
+}
